@@ -11,13 +11,13 @@ def read_for_Petrolpump():
 
 def read_for_Owners():
     result = view_all_Owners_data()
-    df = pd.DataFrame(result, columns=['Owner_id','Owner_Name', 'Contact_NO', 'DOB', 'Gender', 'Address', 'Partnership'])
+    df = pd.DataFrame(result, columns=['Owner_id','Owner_Name', 'Contact_NO', 'DOB', 'Gender', 'Address'])
     with st.expander("View all Owners"):
         st.dataframe(df)
 
 def read_for_Employee():
     result = view_all_Employee_data()
-    df = pd.DataFrame(result, columns=['Employee_ID', 'Emp_Name', 'Emp_Gender', 'Designation', 'DOB', 'Salary',  'Emp_Address', 'Email_ID' , 'Petrolpump_No', 'Manager_ID'])
+    df = pd.DataFrame(result, columns=['Employee_ID', 'Emp_Name', 'Emp_Gender', 'Designation', 'DOB', 'Salary',  'Emp_Address', 'Email_ID' , 'epp_no', 'Manager_ID'])
     with st.expander("View all Employees"):
         st.dataframe(df)
 
@@ -29,13 +29,13 @@ def read_for_Customer():
 
 def read_for_Invoice():
     result = view_all_Invoice_data()
-    df = pd.DataFrame(result, columns=['Invoice_No' , 'Date','Payment_Type', 'Fuel_Amount' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code'])
+    df = pd.DataFrame(result, columns=['Invoice_No' , 'Date','Payment_Type', 'Fuel_in_liters' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code', 'ipp_no'])
     with st.expander("View all Invoices"):
         st.dataframe(df)
 
 def read_for_Tanker():
     result = view_all_Tanker_data()
-    df = pd.DataFrame(result, columns=['Tanker_ID', 'Capacity', 'pressure', 'Fuel_ID' , 'Fuel_Amount', 'Fuel_Name' , 'Fuel_Price' , 'Petrolpump_No'])
+    df = pd.DataFrame(result, columns=['Tanker_ID', 'Capacity', 'pressure', 'Fuel_ID' , 'Fuel_Amount', 'Fuel_Name' , 'Fuel_Price' , 'tpp_no'])
     with st.expander("View all Tankers"):
         st.dataframe(df)
 
@@ -46,6 +46,6 @@ def read_for_Tanker():
 
 def read_for_invoice_backup():
     result = view_all_invoice_backup()
-    df = pd.DataFrame(result, columns=['Invoice_No' , 'Date','Payment_Type', 'Fuel_Amount' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code'])
+    df = pd.DataFrame(result, columns=['Invoice_No' , 'Date','Payment_Type', 'Fuel_in_liters' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code', 'ipp_no'])
     with st.expander("View all Invoices"):
         st.dataframe(df)

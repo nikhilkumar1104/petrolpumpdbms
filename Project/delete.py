@@ -22,7 +22,7 @@ def delete_for_Petrolpump():
 
 def delete_for_Owners():
     result = view_all_Owners_data()
-    df = pd.DataFrame(result, columns=['Owner_id','Owner_Name', 'Contact_NO', 'DOB', 'Gender', 'Address', 'Partnership'])
+    df = pd.DataFrame(result, columns=['Owner_id','Owner_Name', 'Contact_NO', 'DOB', 'Gender', 'Address'])
     with st.expander("View all Owners"):
         st.dataframe(df)
 
@@ -34,14 +34,14 @@ def delete_for_Owners():
         st.success("Owners has been deleted successfully")
 
     result2 = view_all_Owners_data()
-    df2 = pd.DataFrame(result2, columns=['Owner_id','Owner_Name', 'Contact_NO', 'DOB', 'Gender', 'Address', 'Partnership'])
+    df2 = pd.DataFrame(result2, columns=['Owner_id','Owner_Name', 'Contact_NO', 'DOB', 'Gender', 'Address'])
     with st.expander("Updated data"):
         st.dataframe(df2)
 
 
 def delete_for_Employee():
     result = view_all_Employee_data()
-    df = pd.DataFrame(result, columns=['Employee_ID', 'Emp_Name', 'Emp_Gender', 'Designation','DOB', 'Salary', 'Emp_Address', 'Email_ID' , 'Petrolpump_No', 'Manager_ID'])
+    df = pd.DataFrame(result, columns=['Employee_ID', 'Emp_Name', 'Emp_Gender', 'Designation','DOB', 'Salary', 'Emp_Address', 'Email_ID' , 'epp_no', 'Manager_ID'])
     with st.expander("View all Employee"):
         st.dataframe(df)
 
@@ -52,7 +52,7 @@ def delete_for_Employee():
         delete_data_Employee(selected_Employee)
         st.success("Employee has been deleted successfully")
     result2 = view_all_Employee_data()
-    df2 = pd.DataFrame(result2, columns=['Employee_ID', 'Emp_Name', 'Emp_Gender', 'Designation','DOB', 'Salary', 'Emp_Address', 'Email_ID' , 'Petrolpump_No', 'Manager_ID'])
+    df2 = pd.DataFrame(result2, columns=['Employee_ID', 'Emp_Name', 'Emp_Gender', 'Designation','DOB', 'Salary', 'Emp_Address', 'Email_ID' , 'epp_no', 'Manager_ID'])
     with st.expander("Updated data"):
         st.dataframe(df2)
 
@@ -77,7 +77,7 @@ def delete_for_Customer():
 
 def delete_for_Invoice():
     result = view_all_Invoice_data()
-    df = pd.DataFrame(result, columns=['Invoice_No' , 'Date' , 'Invoice_Type' , 'Fuel_Amount' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code'])
+    df = pd.DataFrame(result, columns=['Invoice_No' , 'Date' , 'Invoice_Type' , 'Fuel_in_liters' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code', 'ipp_no'])
     with st.expander("View all Invoices"):
         st.dataframe(df)
 
@@ -88,14 +88,14 @@ def delete_for_Invoice():
         delete_data_Invoice(selected_Invoice)
         st.success("transaction has been deleted successfully")
     result2 = view_all_Invoice_data()
-    df2 = pd.DataFrame(result2, columns=['Invoice_No' , 'Date' , 'Invoice_Type' , 'Fuel_Amount' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code'])
+    df2 = pd.DataFrame(result2, columns=['Invoice_No' , 'Date' , 'Invoice_Type' , 'Fuel_in_liters' , 'Fuel_Type' , 'Discount' , 'Total_Price' , 'Customer_Code', 'ipp_no'])
     with st.expander("Updated data"):
         st.dataframe(df2)
 
 
 def delete_for_Tanker():
     result = view_all_Tanker_data()
-    df = pd.DataFrame(result, columns=['Tanker_ID', 'Capacity', 'pressure', 'Fuel_ID' , 'Fuel_Amount', 'Fuel_Name' , 'Fuel_Price' , 'Petrolpump_No'])
+    df = pd.DataFrame(result, columns=['Tanker_ID', 'Capacity', 'pressure', 'Fuel_ID' , 'Fuel_Amount', 'Fuel_Name' , 'Fuel_Price' , 'tpp_no'])
     with st.expander("View all Tankers"):
         st.dataframe(df)
 
@@ -107,6 +107,6 @@ def delete_for_Tanker():
         delete_data_Tanker(selected_Tanker)
         st.success("Tanker has been deleted successfully")
     result2 = view_all_Tanker_data()
-    df2 = pd.DataFrame(result2, columns=['Tanker_ID', 'Capacity', 'pressure', 'Fuel_ID' , 'Fuel_Amount', 'Fuel_Name' , 'Fuel_Price' , 'Petrolpump_No'])
+    df2 = pd.DataFrame(result2, columns=['Tanker_ID', 'Capacity', 'pressure', 'Fuel_ID' , 'Fuel_Amount', 'Fuel_Name' , 'Fuel_Price' , 'tpp_no'])
     with st.expander("Updated data"):
         st.dataframe(df2)
